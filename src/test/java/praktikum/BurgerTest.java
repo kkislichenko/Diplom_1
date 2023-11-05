@@ -14,8 +14,11 @@ import java.util.List;
 
 @RunWith(MockitoJUnitRunner.class)
 public class BurgerTest {
+    @Mock
     private Ingredient ingredient0;
+    @Mock
     private Ingredient ingredient1;
+    @Mock
     private Ingredient ingredient2;
     @Mock
     private Bun bun;
@@ -42,8 +45,8 @@ public class BurgerTest {
 
         List<Ingredient> ingredientsBeforeRemove = new ArrayList<>();
         ingredientsBeforeRemove.add(ingredient0);
-        ingredientsBeforeRemove.add(ingredient2);
         ingredientsBeforeRemove.add(ingredient1);
+        ingredientsBeforeRemove.add(ingredient2);
         burger.ingredients = ingredientsBeforeRemove;
 
         List<Ingredient> ingredientsAfterRemove = new ArrayList<>();
@@ -87,7 +90,7 @@ public class BurgerTest {
         Mockito.when(ingredient.getPrice()).thenReturn(125F);
         float actualPrice = burger.getPrice();
         float expectedPrice = 635;
-        Assert.assertEquals(expectedPrice, actualPrice, 0.000000000000001);
+        Assert.assertEquals(expectedPrice, actualPrice, Settings.DELTA);
     }
 
     @Test

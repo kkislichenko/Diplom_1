@@ -27,7 +27,7 @@ public class IngredientTest {
     @Test
     public void getPrice() {
         Ingredient ingredient = new Ingredient(ingredientType, ingredientName, ingredientPrice);
-        Assert.assertEquals(ingredientPrice, ingredient.getPrice(), 0.000000000000001);
+        Assert.assertEquals(ingredientPrice, ingredient.getPrice(), Settings.DELTA);
     }
 
     @Test
